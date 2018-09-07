@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+
+    <TextView
+        android:id="@+id/id_trip_airline_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TITLE"/>
+
+    <TextView
+        android:id="@+id/id_airline_booking_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="overview....."
+        />
+    <TextView
+        android:id="@+id/id_trip_detail_airline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="overview....."
+        />
+    <TextView
+        android:id="@+id/jumlah_trip_airline_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="overview....."
+        />
+
+    <TextView
+        android:id="@+id/harga_jual_trip_airline_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="overview....."
+        />
+    <TextView
+        android:id="@+id/flight_id_dep_trip_airline_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="overview....."
+        />
+    <TextView
+        android:id="@+id/flight_id_ret_trip_airline_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="overview....."
+        />
+    <TextView
+        android:id="@+id/tanggal_departure_trip_airline_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="overview....."
+        />
+    <TextView
+        android:id="@+id/jumlah_seat_quota_trip_airline_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="overview....."
+        />
+    <TextView
+        android:id="@+id/booking_status_trip_airline_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="overview....."
+        />
+    <TextView
+        android:id="@+id/harga_trip_airline_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="overview....."
+        />
+</LinearLayout>

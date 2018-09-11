@@ -57,7 +57,11 @@ public class TripBusAdapterNew  extends RecyclerView.Adapter<TripBusAdapterNew.V
                         model.get(position).getMtanggal_booking(),model.get(position).getMnama_supir_ap(),
                         model.get(position).getMsap_mobile(),model.get(position).getMsap_email(),model.get(position).getMtgl_madinah_mekkah(),
                         model.get(position).getMtgl_ziarah_madinah(),model.get(position).getMtgl_ziarah_mekkah(),
-                        model.get(position).getMnama_vendor()
+                        model.get(position).getMnama_vendor(),model.get(position).getMnama_supir_mak(),model.get(position).getMmobile_mak(),
+                        model.get(position).getMemail_mak(),
+                        model.get(position).getMnama_supir_mad(),model.get(position).getMmobile_mad(),model.get(position).getMemail_mad(),
+                        model.get(position).getMnama_supir_mdm(),model.get(position).getMmobile_mdm(),model.get(position).getMemail_mdm(),
+                        model.get(position).getMbackdrop_path_img_sap()
                         );
                 BusFragmentDetail frgment = new BusFragmentDetail();
                 Bundle args = new Bundle();

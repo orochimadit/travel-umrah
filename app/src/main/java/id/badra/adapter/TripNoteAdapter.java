@@ -88,10 +88,8 @@ public class TripNoteAdapter extends RecyclerView.Adapter<TripNoteAdapter.Viewho
         public Viewholder(View itemView) {
             super(itemView);
             mView = itemView;
-            mTextViewIdTripNote = itemView.findViewById(R.id.id_trip_note);
-            mTextViewIdTrip = itemView.findViewById(R.id.id_trip_note_trip);
-            mTextViewTanggal = itemView.findViewById(R.id.tanggal_note);
-            mTextViewDeskripsi = itemView.findViewById(R.id.deskripsi_note);
+            mTextViewIdTripNote = itemView.findViewById(R.id.nama_hotel_item);
+
 //            mTextViewNamaSupir =itemView.findViewById(R.id.nama_supir);
 //            mTextViewSapMobile =itemView.findViewById(R.id.sap_mobile);
 //            imageViewPoster = (ImageView) mView.findViewById(R.id.poster_path);

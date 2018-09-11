@@ -53,8 +53,8 @@ public class MainActivity extends AppCompatActivity implements TripAdapter.OnIte
         parseJson();
     }
     private void parseJson(){
-        String url= "http://192.168.0.17/api/trip.php?id_user=1";
-//        String url= "http://192.168.100.104/api/trip.php?id_user=1";
+//        String url= "http://192.168.0.17/api/trip.php?id_user=1";
+        String url= "http://umrah.kamusminang.com/api/trip.php?id_user=1";
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
 
             @Override

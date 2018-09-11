@@ -26,6 +26,7 @@ import java.util.ArrayList;
 
 import id.badra.adapter.TripBusAdapterNew;
 import id.badra.model.TripBusItem;
+import id.badra.util.Server;
 
 import static id.badra.travelumrah.MainActivity.ExtraIdTrip;
 
@@ -57,9 +58,10 @@ public class BusFragment extends Fragment {
 
         return view;
     }
+
     public void sendRequest(String idtrip) {
-        String url= "http://192.168.0.17/api/trip_bus.php?id_trip="+idtrip;
-//        String url= "http://192.168.100.104/api/trip_bus.php?id_trip="+idtrip;
+//        String url= "http://192.168.0.17/api/trip_bus.php?id_trip="+idtrip;
+        String url= Server.URL+"trip_bus.php?id_trip="+idtrip;
         requestQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,url,null, new Response.Listener<JSONObject>() {
             @Override
@@ -80,8 +82,17 @@ public class BusFragment extends Fragment {
                               jsonObject.getString("tanggal_madinah_makkah"),
                               jsonObject.getString("tanggal_ziarah_madinah"),
                               jsonObject.getString("tanggal_ziarah_makkah"),
-                              jsonObject.getString("nama_vendor")
-
+                              jsonObject.getString("nama_vendor"),
+                              jsonObject.getString("nama_sopir_mad"),
+                              jsonObject.getString("smd_mobile"),
+                              jsonObject.getString("smd_email"),
+                              jsonObject.getString("nama_sopir_zmk"),
+                              jsonObject.getString("zmk_mobile"),
+                              jsonObject.getString("zmk_email"),
+                              jsonObject.getString("nama_sopir_mdm"),
+                              jsonObject.getString("mdm_mobile"),
+                              jsonObject.getString("mdm_email"),
+                              jsonObject.getString("sap_foto")
                         );
                         arrayList.add(movie);
                     }

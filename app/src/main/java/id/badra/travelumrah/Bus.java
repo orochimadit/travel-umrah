@@ -38,64 +38,64 @@ public class Bus extends AppCompatActivity implements TripBusAdapter.OnItemClick
         String id_trip = bundle.getString("id_trip");
         //TextView textView = (TextView)findViewById(R.id.tampil);
         //textView.setText(id_trip);
-        parseJson(id_trip);
+//        parseJson(id_trip);
     }
-
-    private void parseJson(String id_trip){
-        String url= "http://192.168.0.18/api/trip_bus.php?id_trip="+id_trip;
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
-
-            @Override
-            public void onResponse(JSONObject response) {
-//                JSONObject jsonObject = new JSONObject();
-//                Iterator<String>iter= jsonObject.keys();
-
-                try {
-                    JSONArray jsonArray = response.getJSONArray("trip_bus");
-                    for (int i = 0; i < jsonArray.length(); i++) {
-                        JSONObject hit = jsonArray.getJSONObject(i);
-                        String id_trip = hit.getString("id_trip");
-                        String id_bus_booking = hit.getString("id_bus_booking");
-                        String namaSopir = hit.getString("nama_sopir_ap");
-                        String tanggalBooking = hit.getString("tanggal_booking");
-                        String sap_mobile = hit.getString("sap_mobile");
-                        String sap_email = hit.getString("sap_email");
-                        String tanggal_ziarah_madinah = hit.getString("tanggal_ziarah_madinah");
-                        String tanggal_ziarah_makkah = hit.getString("tanggal_ziarah_makkah");
-                        String tanggalMadinahMakkah = hit.getString("tanggal_madinah_makkah");
-                        String namaVendor = hit.getString("nama_vendor");
-                        mTripBusList.add(new TripBusItem(id_bus_booking,id_trip, tanggalBooking, namaSopir,sap_mobile,
-                                sap_email,tanggal_ziarah_makkah,tanggal_ziarah_madinah,tanggalMadinahMakkah,namaVendor));
-//                    while(iter.hasNext()){
-//                        String key =iter.next();
-//                            try {
-//                                Object tanggal=jsonObject.get("tanggal");
-//                                Object creatorName=jsonObject.get("id_trip");
-//                                Object route=jsonObject.get("route");
-//                                Object target_jumlah=jsonObject.get("target_jumlah");
-//                                Object route=jsonObject.get("hotel_bintang");
-//                                mTripList.add(new TripItem(tanggal, creatorName,route,target_jumlah,hotel_bintang));
-//                            }catch (JSONException e){
-//                                e.printStackTrace();
-//                            }
 //
+//    private void parseJson(String id_trip){
+//        String url= "http://192.168.0.18/api/trip_bus.php?id_trip="+id_trip;
+//        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+//
+//            @Override
+//            public void onResponse(JSONObject response) {
+////                JSONObject jsonObject = new JSONObject();
+////                Iterator<String>iter= jsonObject.keys();
+//
+//                try {
+//                    JSONArray jsonArray = response.getJSONArray("trip_bus");
+//                    for (int i = 0; i < jsonArray.length(); i++) {
+//                        JSONObject hit = jsonArray.getJSONObject(i);
+//                        String id_trip = hit.getString("id_trip");
+//                        String id_bus_booking = hit.getString("id_bus_booking");
+//                        String namaSopir = hit.getString("nama_sopir_ap");
+//                        String tanggalBooking = hit.getString("tanggal_booking");
+//                        String sap_mobile = hit.getString("sap_mobile");
+//                        String sap_email = hit.getString("sap_email");
+//                        String tanggal_ziarah_madinah = hit.getString("tanggal_ziarah_madinah");
+//                        String tanggal_ziarah_makkah = hit.getString("tanggal_ziarah_makkah");
+//                        String tanggalMadinahMakkah = hit.getString("tanggal_madinah_makkah");
+//                        String namaVendor = hit.getString("nama_vendor");
+//                        mTripBusList.add(new TripBusItem(id_bus_booking,id_trip, tanggalBooking, namaSopir,sap_mobile,
+//                                sap_email,tanggal_ziarah_makkah,tanggal_ziarah_madinah,tanggalMadinahMakkah,namaVendor));
+////                    while(iter.hasNext()){
+////                        String key =iter.next();
+////                            try {
+////                                Object tanggal=jsonObject.get("tanggal");
+////                                Object creatorName=jsonObject.get("id_trip");
+////                                Object route=jsonObject.get("route");
+////                                Object target_jumlah=jsonObject.get("target_jumlah");
+////                                Object route=jsonObject.get("hotel_bintang");
+////                                mTripList.add(new TripItem(tanggal, creatorName,route,target_jumlah,hotel_bintang));
+////                            }catch (JSONException e){
+////                                e.printStackTrace();
+////                            }
+////
+////                    }
+//                        //mTripBusAdapter = new TripBusAdapter(Bus.this, mTripBusList);
+//                        mRecyclerView.setAdapter(mTripBusAdapter);
+//                        mTripBusAdapter.setOnItemClickListener(Bus.this);
 //                    }
-                        //mTripBusAdapter = new TripBusAdapter(Bus.this, mTripBusList);
-                        mRecyclerView.setAdapter(mTripBusAdapter);
-                        mTripBusAdapter.setOnItemClickListener(Bus.this);
-                    }
-                }catch (JSONException e) {
-                    e.printStackTrace();
-                }}
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
-            }
-        }
-        );
-        mRequestQueue.add(request);
-    }
+//                }catch (JSONException e) {
+//                    e.printStackTrace();
+//                }}
+//        }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//                error.printStackTrace();
+//            }
+//        }
+//        );
+//        mRequestQueue.add(request);
+//    }
 
     @Override
     public void onItemClick(int position) {

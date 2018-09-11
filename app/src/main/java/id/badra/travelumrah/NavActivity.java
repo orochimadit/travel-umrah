@@ -41,6 +41,8 @@ public class NavActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        fms.beginTransaction().replace(R.id.content_frames, new BusFragment()).commit();
     }
 
     @Override
@@ -91,9 +93,9 @@ public class NavActivity extends AppCompatActivity
             fms.beginTransaction().replace(R.id.content_frames,new TripNoteFragment()).commit();
 
         } else if (id == R.id.nav_manage) {
-
+            fms.beginTransaction().replace(R.id.content_frames,new TripHotelFragment()).commit();
         } else if (id == R.id.nav_share) {
-
+            fms.beginTransaction().replace(R.id.content_frames,new CameraFragment()).commit();
         } else if (id == R.id.nav_send) {
 
         }

@@ -29,6 +29,7 @@ import id.badra.adapter.TripAirlineAdapter;
 import id.badra.adapter.TripNoteAdapter;
 import id.badra.model.TripAirline;
 import id.badra.model.TripNote;
+import id.badra.util.Server;
 
 import static id.badra.travelumrah.MainActivity.ExtraIdTrip;
 
@@ -61,8 +62,8 @@ public class TripNoteFragment extends Fragment {
     }
 
     public void sendRequest(String idtrip) {
-        String url= "http://192.168.0.17/api/trip_airline.php?id_trip="+idtrip;
-//        String url= "http://192.168.100.104/api/trip_note.php?id_trip="+idtrip;
+//        String url= "http://192.168.0.17/api/trip_airline.php?id_trip="+idtrip;
+        String url= Server.URL+"trip_note.php?id_trip="+idtrip;
         requestQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,url,null, new Response.Listener<JSONObject>() {
             @Override

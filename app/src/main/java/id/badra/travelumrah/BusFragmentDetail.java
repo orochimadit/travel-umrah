@@ -43,6 +43,10 @@ public class BusFragmentDetail extends Fragment {
     private TextView emailSupirMad;
     private TextView emailSupirMdm;
     private ImageView imgSap;
+    private ImageView imgSMak;
+    private ImageView imgSMad;
+    private ImageView imgSMdm;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -63,6 +67,9 @@ public class BusFragmentDetail extends Fragment {
         emailSupirMad=(TextView)rootView.findViewById(R.id.email_supir_bus_mad_detail);
         emailSupirMdm=(TextView)rootView.findViewById(R.id.email_supir_bus_mdm_detail);
         imgSap          = (ImageView)rootView.findViewById(R.id.backdrop_path_bus_detail);
+        imgSMak         = (ImageView)rootView.findViewById(R.id.backdrop_path_bus_mak_detail);
+        imgSMad         = (ImageView)rootView.findViewById(R.id.backdrop_path_bus_mad_detail);
+        imgSMdm         = (ImageView)rootView.findViewById(R.id.backdrop_path_bus_mdm_detail);
        TripBusItem movie = getArguments().getParcelable("movie");
         if (movie!=null){
             namaSupirAp.setText(movie.getMnama_supir_ap());
@@ -82,6 +89,12 @@ public class BusFragmentDetail extends Fragment {
 
             Picasso.with(getActivity().getApplicationContext()).load(Server.ImgSrc+movie.getMbackdrop_path_img_sap())
                     .placeholder(R.mipmap.ic_launcher).into(imgSap);
+            Picasso.with(getActivity().getApplicationContext()).load(Server.ImgSrc+movie.getMbackdrop_path_img_mak())
+                    .placeholder(R.mipmap.ic_launcher).into(imgSMak);
+            Picasso.with(getActivity().getApplicationContext()).load(Server.ImgSrc+movie.getMbackdrop_path_img_mad())
+                    .placeholder(R.mipmap.ic_launcher).into(imgSMad);
+            Picasso.with(getActivity().getApplicationContext()).load(Server.ImgSrc+movie.getMbackdrop_path_img_mdm())
+                    .placeholder(R.mipmap.ic_launcher).into(imgSMdm);
         }
         return rootView;
     }

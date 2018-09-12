@@ -24,6 +24,9 @@ public class TripBusItem  implements Parcelable{
     private String mmobile_mdm;
     private String memail_mdm;
     private String mbackdrop_path_img_sap;
+    private String mbackdrop_path_img_mak;
+    private String mbackdrop_path_img_mad;
+    private String mbackdrop_path_img_mdm;
 
 
 
@@ -35,7 +38,10 @@ public class TripBusItem  implements Parcelable{
                        String nama_vendor,String nama_supir_mad,String mobile_mad,String email_mad,
                        String nama_supir_mak,String mobile_mak,String email_mak,
                        String nama_supir_mdm,String mobile_mdm,String email_mdm,
-                       String backdrop_path_img_sap
+                       String backdrop_path_img_sap,
+                       String backdrop_path_img_mad,
+                       String backdrop_path_img_mak,
+                       String backdrop_path_img_mdm
                        ){
 
         mid_bus_booking=id_bus_booking;
@@ -58,6 +64,9 @@ public class TripBusItem  implements Parcelable{
         mmobile_mdm=mobile_mdm;
         memail_mdm=email_mdm;
         mbackdrop_path_img_sap=backdrop_path_img_sap;
+        mbackdrop_path_img_mak =backdrop_path_img_mak;
+        mbackdrop_path_img_mad=backdrop_path_img_mad;
+        mbackdrop_path_img_mdm=backdrop_path_img_mdm;
     }
 
     public String getMid_trip() {
@@ -140,6 +149,18 @@ public class TripBusItem  implements Parcelable{
         return mbackdrop_path_img_sap;
     }
 
+    public String getMbackdrop_path_img_mad() {
+        return mbackdrop_path_img_mad;
+    }
+
+    public String getMbackdrop_path_img_mak() {
+        return mbackdrop_path_img_mak;
+    }
+
+    public String getMbackdrop_path_img_mdm() {
+        return mbackdrop_path_img_mdm;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -167,6 +188,9 @@ public class TripBusItem  implements Parcelable{
         dest.writeString(this.memail_mad);
         dest.writeString(this.memail_mdm);
         dest.writeString(this.mbackdrop_path_img_sap);
+        dest.writeString(this.mbackdrop_path_img_mak);
+        dest.writeString(this.mbackdrop_path_img_mad);
+        dest.writeString(this.mbackdrop_path_img_mdm);
     }
 
     protected TripBusItem(Parcel in) {
@@ -190,6 +214,9 @@ public class TripBusItem  implements Parcelable{
         this.memail_mad=in.readString();
         this.memail_mdm=in.readString();
         this.mbackdrop_path_img_sap=in.readString();
+        this.mbackdrop_path_img_mak=in.readString();
+        this.mbackdrop_path_img_mad=in.readString();
+        this.mbackdrop_path_img_mdm=in.readString();
     }
 
     public static final Parcelable.Creator<TripBusItem> CREATOR = new Parcelable.Creator<TripBusItem>() {

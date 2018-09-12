@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements TripAdapter.OnIte
         mRequestQueue= Volley.newRequestQueue(this);
         parseJson();
     }
+
     private void parseJson(){
 //        String url= "http://192.168.0.17/api/trip.php?id_user=1";
         String url= "http://umrah.kamusminang.com/api/trip.php?id_user=1";

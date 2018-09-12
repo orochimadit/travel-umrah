@@ -44,6 +44,7 @@ public class CameraFragment extends Fragment {
 
  uploadTask asyncUploadTask = new uploadTask();
             asyncUploadTask.execute();
+
             }
         });
 
@@ -89,5 +90,6 @@ public class CameraFragment extends Fragment {
                 return t;
             }
         }
+
     }
 }

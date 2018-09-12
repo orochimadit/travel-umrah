@@ -92,7 +92,10 @@ public class BusFragment extends Fragment {
                               jsonObject.getString("nama_sopir_mdm"),
                               jsonObject.getString("mdm_mobile"),
                               jsonObject.getString("mdm_email"),
-                              jsonObject.getString("sap_foto")
+                              jsonObject.getString("sap_foto"),
+                              jsonObject.getString("zmk_foto"),
+                              jsonObject.getString("smd_foto"),
+                              jsonObject.getString("mdm_foto")
                         );
                         arrayList.add(movie);
                     }

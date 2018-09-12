@@ -2,9 +2,12 @@ package id.badra.travelumrah;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -45,6 +48,20 @@ public class TripNoteFragment extends Fragment {
         View view = inflater.inflate(R.layout.trip_note_fragment,container,false);
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.RecycleListViewNote);
 
+
+        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+                Fragment newCase=new TripNoteAddFragment();
+                FragmentTransaction transaction=getFragmentManager().beginTransaction();
+                transaction.replace(R.id.content_frames,newCase); // give your fragment container id in first parameter
+                transaction.addToBackStack(null);  // if written, this transaction will be added to backstack
+                transaction.commit();
+            }
+        });
         arrayList = new ArrayList<>();
         sendRequest(idTrip);
 
@@ -98,5 +115,6 @@ public class TripNoteFragment extends Fragment {
         });
         requestQueue.add(jsonObjectRequest);
     }
+
 
 }

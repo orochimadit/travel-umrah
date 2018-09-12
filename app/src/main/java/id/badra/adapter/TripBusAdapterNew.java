@@ -1,6 +1,7 @@
 package id.badra.adapter;
 
 import android.app.FragmentManager;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -49,7 +50,7 @@ public class TripBusAdapterNew  extends RecyclerView.Adapter<TripBusAdapterNew.V
 //        holder.mTextViewSapMobile.setText(sapMobile);
         holder.mTextViewNamaVendor.setText(namaVendor);
 
-
+        holder.mView.setBackgroundColor(Color.parseColor("#90a4ae"));
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,8 +62,11 @@ public class TripBusAdapterNew  extends RecyclerView.Adapter<TripBusAdapterNew.V
                         model.get(position).getMemail_mak(),
                         model.get(position).getMnama_supir_mad(),model.get(position).getMmobile_mad(),model.get(position).getMemail_mad(),
                         model.get(position).getMnama_supir_mdm(),model.get(position).getMmobile_mdm(),model.get(position).getMemail_mdm(),
-                        model.get(position).getMbackdrop_path_img_sap()
+                        model.get(position).getMbackdrop_path_img_sap(),model.get(position).getMbackdrop_path_img_mak(),
+                        model.get(position).getMbackdrop_path_img_mad(),model.get(position).getMbackdrop_path_img_mdm()
+
                         );
+
                 BusFragmentDetail frgment = new BusFragmentDetail();
                 Bundle args = new Bundle();
                 args.putParcelable("movie",obj);

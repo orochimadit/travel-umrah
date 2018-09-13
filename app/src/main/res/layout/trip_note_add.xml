@@ -36,6 +36,16 @@
         <!--android:layout_height="wrap_content"-->
         <!--android:background="@android:drawable/editbox_background_normal"/>-->
 
+    <ImageView
+        android:layout_gravity="center"
+        android:layout_marginTop="12dp"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:id="@+id/uploadfoto_blog"
+        android:src="@mipmap/ic_launcher"
+        android:scaleType="centerCrop"
+        android:layout_weight="1.02" />
+
     <Button
         android:id="@+id/buttonTripNoteAdd"
         android:layout_width="match_parent"

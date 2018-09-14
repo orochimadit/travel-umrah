@@ -56,7 +56,7 @@ public class TripNoteAddFragment extends Fragment {
     private TextView deskripsi;
     private Button btnAdd;
     private String sDeskripsi;
-    private String sTanggal;
+    private String sTanggal,SphotoPath;
     private String SaveTanggal;
     private ImageView img;
     private final int GALLERY = 1, CAMERA = 2;
@@ -137,8 +137,10 @@ public class TripNoteAddFragment extends Fragment {
 //        sJudul = judul.getText().toString();
         sDeskripsi = deskripsi.getText().toString();
 //        sTanggal = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        sTanggal = new SimpleDateFormat("ddMMyyyy_HHmmss").format(new Date());
+//        sTanggal = new SimpleDateFormat("ddMMyyyy_HHmmss").format(new Date());
+        sTanggal = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
         SaveTanggal = String.valueOf(sTanggal);
+        SphotoPath = "http://filehosting.vidyanusa.id/mobile/blog/" + SaveTanggal + ".png";
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.URL + "trip_note_insert.php",
                 new Response.Listener<String>() {
                     @Override
@@ -173,7 +175,7 @@ public class TripNoteAddFragment extends Fragment {
                 params.put("deskripsi", sDeskripsi);
 //                params.put("tanggal",SaveTanggal);
                 params.put("tanggal", sTanggal);
-
+                params.put("foto",SphotoPath);
                 return params;
             }
         };

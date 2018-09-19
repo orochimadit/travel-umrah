@@ -5,72 +5,203 @@
     android:orientation="vertical">
 
 
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
 
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Id Trip Airline"
+        android:textStyle="bold"
+        />
     <TextView
         android:id="@+id/id_trip_airline_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TITLE"/>
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Id Airline Booking"></TextView>
 
     <TextView
+
         android:id="@+id/id_airline_booking_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="overview....."
         />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Id trip"
+            android:textStyle="bold"
+            />
     <TextView
         android:id="@+id/id_trip_detail_airline"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="overview....."
         />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Jumlah Trip Airline"
+            android:textStyle="bold"
+            />
     <TextView
         android:id="@+id/jumlah_trip_airline_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="overview....."
         />
-
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Harga Jual Trip"
+            android:textStyle="bold"
+            />
     <TextView
         android:id="@+id/harga_jual_trip_airline_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="overview....."
         />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Flight id Dep"
+            android:textStyle="bold"
+            />
     <TextView
         android:id="@+id/flight_id_dep_trip_airline_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="overview....."
         />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Flight id Ret"
+            android:textStyle="bold"
+            />
     <TextView
         android:id="@+id/flight_id_ret_trip_airline_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="overview....."
         />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tanggal Departure "
+            android:textStyle="bold"
+            />
     <TextView
         android:id="@+id/tanggal_departure_trip_airline_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="overview....."
         />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Jumlah Seat Quota "
+            android:textStyle="bold"
+            />
     <TextView
         android:id="@+id/jumlah_seat_quota_trip_airline_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="overview....."
         />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Booking status  "
+            android:textStyle="bold"
+            />
     <TextView
         android:id="@+id/booking_status_trip_airline_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="overview....."
         />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Harga Trip Airline  "
+            android:textStyle="bold"
+            />
     <TextView
         android:id="@+id/harga_trip_airline_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="overview....."
         />
+    </LinearLayout>
 </LinearLayout>

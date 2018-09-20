@@ -6,10 +6,14 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import id.badra.model.TripAirline;
 import id.badra.model.TripNote;
+import id.badra.util.Server;
 
 public class TripNoteFragmentDetail extends Fragment {
     private TextView idTripNote;
@@ -17,6 +21,7 @@ public class TripNoteFragmentDetail extends Fragment {
     private TextView tanggal;
     private TextView deskripsi;
 
+    private ImageView imgSNote;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -28,7 +33,7 @@ public class TripNoteFragmentDetail extends Fragment {
         deskripsi = (TextView)rootView.findViewById(R.id.deskripsi_note);
 //          = (TextView) rootView.findViewById(R.id.nama_supir_bus_detail);
 //        telepon = (TextView) rootView.findViewById(R.id.telepon_supir_bus_detail);
-
+        imgSNote=(ImageView)rootView.findViewById(R.id.backdrop_path_note_detail);
         TripNote panggil = getArguments().getParcelable("trip_note");
         if (panggil!=null){
 //            nama.setText(movie.getMnama_supir_ap());
@@ -39,6 +44,8 @@ public class TripNoteFragmentDetail extends Fragment {
             tanggal.setText(panggil.getMtanggal());
             deskripsi.setText(panggil.getMdeskripsi());
 
+            Picasso.with(getActivity().getApplicationContext()).load(Server.ImgSrc+panggil.getMtanggal())
+                    .placeholder(R.mipmap.ic_launcher).into(imgSNote);
         }
         return rootView;
     }

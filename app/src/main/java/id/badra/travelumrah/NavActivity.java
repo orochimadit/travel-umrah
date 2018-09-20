@@ -89,7 +89,7 @@ public class NavActivity extends AppCompatActivity
         } else if (id == R.id.nav_share) {
             fms.beginTransaction().replace(R.id.content_frames,new CameraFragment()).commit();
         } else if (id == R.id.nav_send) {
-
+            fms.beginTransaction().replace(R.id.content_frames,new TripGaleriFragment()).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

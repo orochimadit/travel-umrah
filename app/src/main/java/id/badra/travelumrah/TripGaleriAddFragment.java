@@ -12,7 +12,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,24 +39,22 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import id.badra.app.AppController;
 import id.badra.app.RequestHandler;
 import id.badra.util.Server;
 
 import static android.app.Activity.RESULT_OK;
-import static android.media.MediaRecorder.VideoSource.CAMERA;
 import static id.badra.travelumrah.MainActivity.ExtraIdTrip;
 
+public class TripGaleriAddFragment extends Fragment {
 
-public class TripNoteAddFragment extends Fragment {
     private TextView idTripNote;
     private TextView idTrip;
-    // private String SidTrip;
+//     private String SidTrip;
     private TextView tanggal;
-    private TextView deskripsi;
+    private TextView caption;
     private Button btnAdd;
-    private String sDeskripsi;
-    private String sTanggal,SphotoPath;
+    private String sCaption;
+    private String sTanggal,SphotoPath,Ssimpan;
     private String SaveTanggal;
     private ImageView img;
     private final int GALLERY = 1, CAMERA = 2;
@@ -65,19 +62,19 @@ public class TripNoteAddFragment extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)   {
         View rootView;
-        rootView = inflater.inflate(R.layout.trip_note_add, container, false);
+        rootView = inflater.inflate(R.layout.trip_galeri_add, container, false);
         Intent intent = getActivity().getIntent();
         final String SidTrip = intent.getStringExtra(ExtraIdTrip);
-        btnAdd = (Button) rootView.findViewById(R.id.buttonTripNoteAdd);
-        deskripsi = (TextView) rootView.findViewById(R.id.txt_deskripsi);
+        btnAdd = (Button) rootView.findViewById(R.id.buttonTripGaleriAdd);
+        caption = (TextView) rootView.findViewById(R.id.txt_caption);
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 tambah_post_blog(SidTrip);
-                Fragment newCase=new TripNoteFragment();
+                Fragment newCase=new TripGaleriFragment();
                 FragmentTransaction transaction=getFragmentManager().beginTransaction();
                 transaction.replace(R.id.content_frames,newCase); // give your fragment container id in first parameter
                 transaction.addToBackStack(null);  // if written, this transaction will be added to backstack
@@ -85,7 +82,7 @@ public class TripNoteAddFragment extends Fragment {
             }
         });
         bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
-        img = (ImageView) rootView.findViewById(R.id.uploadfoto_blog);
+        img = (ImageView) rootView.findViewById(R.id.uploadfoto_galeri);
         img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -141,19 +138,22 @@ public class TripNoteAddFragment extends Fragment {
 //        sTag = sptag.getSelectedItem().toString();
 //        idTags = listTags.get(sptag.getSelectedItemPosition() - 1);
 //        sJudul = judul.getText().toString();
-        sDeskripsi = deskripsi.getText().toString();
+        sCaption = caption.getText().toString();
 //        sTanggal = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
 //        sTanggal = new SimpleDateFormat("ddMMyyyy_HHmmss").format(new Date());
         sTanggal = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
         SaveTanggal = String.valueOf(sTanggal);
-        SphotoPath = "http://umrah.kamusminang.com/api/note_image/" + SaveTanggal + ".png";
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.URL + "trip_note_insert.php",
+        Ssimpan=SaveTanggal+".png";
+        //http://umrah.kamusminang.com/api/trip_galeri_image/2018-09-20%2017:31:57.png
+        SphotoPath = "http://umrah.kamusminang.com/api/trip_galeri_image/" + SaveTanggal + ".png";
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.URL + "trip_galeri_add.php",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         //  progressDialos.dismiss();
                         try {
                             JSONObject obj = new JSONObject(response);
+
                             JSONObject objData = new JSONObject(obj.getString("data"));
                             Toast.makeText(getActivity().getApplicationContext(), objData.getString("message"), Toast.LENGTH_SHORT).show();
                         } catch (JSONException e) {
@@ -178,10 +178,10 @@ public class TripNoteAddFragment extends Fragment {
 
 //                params.put("access_token",access_token);
                 params.put("id_trip", idTrip);
-                params.put("deskripsi", sDeskripsi);
+                params.put("caption", sCaption);
 //                params.put("tanggal",SaveTanggal);
-                params.put("tanggal", sTanggal);
-                params.put("foto",SphotoPath);
+//                params.put("tanggal", sTanggal);
+                params.put("foto",Ssimpan);
                 return params;
             }
         };
@@ -190,7 +190,7 @@ public class TripNoteAddFragment extends Fragment {
 //        RequestHandler.getInstance(getActivity().getApplicationContext()).addToRequestQueue(stringRequest);
 //        AppController.getInstance(getActivity().getApplicationContext().a)
         RequestHandler.getInstance(getActivity().getApplicationContext()).addToRequestQueue(stringRequest);
-           up();
+        up();
     }
 
     private void showPictureDialog() {
@@ -251,14 +251,18 @@ public class TripNoteAddFragment extends Fragment {
         }
         super.onActivityResult(requestCode, resultCode, data);
 
-    }
+}
 
     public void up(){
-        String address="umrah.kamusminang.com",u="umrah@kamusminang.com",p="umrah193",directory="api/note_image";
-        TripNoteAddFragment.uploadTask async=new TripNoteAddFragment.uploadTask();
-
+        String address="umrah.kamusminang.com",u="umrah@kamusminang.com",p="umrah193",directory="api/trip_galeri_image";
+        TripGaleriAddFragment.uploadTask async=new TripGaleriAddFragment.uploadTask();
         async.execute(address,u,p,directory);
     }
+
+
+
+
+
 
     class uploadTask extends AsyncTask<String, Void, String> {
 
@@ -282,12 +286,11 @@ public class TripNoteAddFragment extends Fragment {
                 }
                 ftp.uploadFile(bs, sTanggal + ".png");
                 ftp.disconnect();
-                return new String("http://umrah.kamusminang.com/api/note_image/" + sTanggal + ".png");
+                return new String("http://umrah.kamusminang.com/api/trip_galeri_image/" + sTanggal + ".png");
             } catch (Exception e) {
                 String t = "Failure : " + e.getLocalizedMessage();
                 return t;
             }
         }
     }
-
 }

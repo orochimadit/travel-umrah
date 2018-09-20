@@ -41,7 +41,7 @@ public class TripGaleriFragmentDetail extends Fragment {
 //            telepon.setText(movie.getMsap_mobile());
 
             idTrip.setText(panggil.getMcaption());
-            Picasso.with(getActivity().getApplicationContext()).load(Server.ImgSrcApi+"trip_galeri_image/"+panggil.getMfoto())
+            Picasso.with(getActivity().getApplicationContext()).load(Server.ImgSrcApi+panggil.getMfoto().replace(" ","%20"))
                     .placeholder(R.mipmap.ic_launcher).into(imgFoto);
         }
         return rootView;

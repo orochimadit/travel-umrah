@@ -254,7 +254,7 @@ public class TripNoteAddFragment extends Fragment {
     }
 
     public void up(){
-        String address="umrah.kamusminang.com",u="umrah@kamusminang.com",p="umrah193",directory="api/note_image";
+        String address="umrah.kamusminang.com",u="umrah@kamusminang.com",p="umrah193",directory="api/note_image/";
         TripNoteAddFragment.uploadTask async=new TripNoteAddFragment.uploadTask();
 
         async.execute(address,u,p,directory);

@@ -254,7 +254,7 @@ public class TripGaleriAddFragment extends Fragment {
 }
 
     public void up(){
-        String address="umrah.kamusminang.com",u="umrah@kamusminang.com",p="umrah193",directory="api/trip_galeri_image";
+        String address="umrah.kamusminang.com",u="umrah@kamusminang.com",p="umrah193",directory="api/trip_galeri_image/";
         TripGaleriAddFragment.uploadTask async=new TripGaleriAddFragment.uploadTask();
         async.execute(address,u,p,directory);
     }

@@ -1,6 +1,7 @@
 package id.badra.adapter;
 
 import android.app.FragmentManager;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,9 +12,12 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import id.badra.model.TripGaleri;
 import id.badra.model.TripHotel;
 
 import id.badra.travelumrah.R;
+import id.badra.travelumrah.TripGaleriFragmentDetail;
+import id.badra.travelumrah.TripHotelFragmentDetail;
 
 
 public class TripHotelAdapter extends RecyclerView.Adapter<TripHotelAdapter.Viewholder>  {
@@ -35,7 +39,7 @@ public class TripHotelAdapter extends RecyclerView.Adapter<TripHotelAdapter.View
     }
 
     @Override
-    public void onBindViewHolder(@NonNull TripHotelAdapter.Viewholder holder, int position) {
+    public void onBindViewHolder(@NonNull TripHotelAdapter.Viewholder holder, final int position) {
         TripHotel currentItem = model.get(position);
 
         String id_trip_hotel = currentItem.getMid_trip_hotel1();
@@ -64,6 +68,46 @@ public class TripHotelAdapter extends RecyclerView.Adapter<TripHotelAdapter.View
         String nama_vendor          = currentItem.getMnama_vendor();
 
         holder.mTextViewNamaHotel.setText(nama_hotel);
+        holder.mView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                TripHotel obj = new TripHotel(model.get(position).getMid_trip_hotel1(),
+                        model.get(position).getMid_trip(),
+                        model.get(position).getMid_trip_la_paket(),
+                        model.get(position).getMid_hotel(),
+                        model.get(position).getMid_vendor(),
+                        model.get(position).getMtanggal_booking(),
+                        model.get(position).getMtanggal_checkin(),
+                        model.get(position).getMlength_of_stay(),
+                        model.get(position).getMtanggal_checkout(),
+                        model.get(position).getMjenis_kamar(),
+                        model.get(position).getMopsi_kamar(),
+                        model.get(position).getMharga_sewa(),
+                        model.get(position).getMjumlah_room(),
+                        model.get(position).getMview(),
+                        model.get(position).getMprofit_margin(),
+                        //id bank?
+                        model.get(position).getMrekening(),
+                        model.get(position).getMharga_jual(),
+                        model.get(position).getMbooking_fee(),
+                        model.get(position).getMbooking_fee_currency(),
+                        model.get(position).getMcontact_mobile(),
+                        model.get(position).getMreview(),
+                        model.get(position).getMstatus(),
+                        model.get(position).getMnama_hotel(),
+                        model.get(position).getMbintang(),
+                        model.get(position).getMnama_vendor(),
+                        model.get(position).getMcontact_email()
+                );
+                TripHotelFragmentDetail frgment = new TripHotelFragmentDetail();
+                Bundle args = new Bundle();
+                args.putParcelable("trip_hotel",obj);
+                frgment.setArguments(args);
+
+                fms.beginTransaction().replace(R.id.content_frames, frgment).commit();
+            }
+        });
 
     }
 

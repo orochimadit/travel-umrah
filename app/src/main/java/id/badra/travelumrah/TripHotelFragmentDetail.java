@@ -8,36 +8,45 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import id.badra.model.TripHotel;
 import id.badra.model.TripNote;
 
 public class TripHotelFragmentDetail extends Fragment {
 
-    private TextView idTripNote;
-    private TextView idTrip;
-    private TextView tanggal;
-    private TextView deskripsi;
+    private TextView namaHotel;
+    private TextView los;
+    private TextView tanggalBooking;
+    private TextView tglCheckin;
+    private TextView tglCheckout,contactMobile,contactEmail;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView;
-        rootView = inflater.inflate(R.layout.trip_note_fragment_detail, container, false);
-        idTrip = (TextView) rootView.findViewById(R.id.id_trip_note_trip);
-        idTripNote =(TextView)rootView.findViewById(R.id.id_trip_note_detail);
-        tanggal = (TextView)rootView.findViewById(R.id.tanggal_note);
-        deskripsi = (TextView)rootView.findViewById(R.id.deskripsi_note);
+        rootView = inflater.inflate(R.layout.trip_hotel_fragment_detail, container, false);
+        namaHotel = (TextView) rootView.findViewById(R.id.nama_hotel_detail);
+        los =(TextView)rootView.findViewById(R.id.los_hotel_detail);
+        tanggalBooking =(TextView)rootView.findViewById(R.id.tanggal_booking_hotel_detail);
+        tglCheckin =(TextView)rootView.findViewById(R.id.tgl_checkin_hotel_detail);
+        tglCheckout =(TextView)rootView.findViewById(R.id.tgl_checkout_hotel_detail);
+        contactMobile=(TextView)rootView.findViewById(R.id.contact_mobile_hotel_detail);
+        contactEmail =(TextView)rootView.findViewById(R.id.contact_email_hotel_detail);
+
 //          = (TextView) rootView.findViewById(R.id.nama_supir_bus_detail);
 //        telepon = (TextView) rootView.findViewById(R.id.telepon_supir_bus_detail);
 
-        TripNote panggil = getArguments().getParcelable("trip_hotel");
+        TripHotel panggil = getArguments().getParcelable("trip_hotel");
         if (panggil!=null){
 //            nama.setText(movie.getMnama_supir_ap());
 //            idTrip.setText(movie.getMid_trip());
 //            telepon.setText(movie.getMsap_mobile());
-            idTrip.setText(panggil.getMid_trip());
-            idTripNote.setText(panggil.getMid_trip_note());
-            tanggal.setText(panggil.getMtanggal());
-            deskripsi.setText(panggil.getMdeskripsi());
+            namaHotel.setText(panggil.getMnama_hotel());
+            los.setText(panggil.getMlength_of_stay());
+            tanggalBooking.setText(panggil.getMtanggal_booking());
+            tglCheckin.setText(panggil.getMtanggal_checkin());
+            tglCheckout.setText(panggil.getMtanggal_checkout());
+            contactMobile.setText(panggil.getMcontact_mobile());
+            contactEmail.setText(panggil.getMcontact_email());
 
         }
         return rootView;

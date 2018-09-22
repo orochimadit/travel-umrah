@@ -24,10 +24,10 @@
             android:id="@+id/nav_managee"
             android:icon="@drawable/ic_menu_manage"
             android:title="Katering" />
-        <!--<item-->
-            <!--android:id="@+id/nav_share"-->
-            <!--android:icon="@drawable/ic_menu_share"-->
-            <!--android:title="Share" />-->
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/ic_menu_share"
+            android:title="Share" />
         <item
             android:id="@+id/nav_send"
             android:icon="@drawable/ic_menu_send"

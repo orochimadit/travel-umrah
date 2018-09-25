@@ -29,77 +29,107 @@ public class TripJamaahAdapter extends RecyclerView.Adapter<TripJamaahAdapter.Vi
     @NonNull
     @Override
     public TripJamaahAdapter.Viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.trip_hotel_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.trip_jamaah_item, parent, false);
         view.setLayoutParams(new RecyclerView.LayoutParams(RecyclerView.LayoutParams.MATCH_PARENT, RecyclerView.LayoutParams.WRAP_CONTENT));
         return new TripJamaahAdapter.Viewholder(view);
     }
 
+
+
     @Override
-    public void onBindViewHolder(@NonNull TripHotelAdapter.Viewholder holder, final int position) {
+    public void onBindViewHolder(@NonNull TripJamaahAdapter.Viewholder holder, final int position) {
         TripJamaah currentItem = model.get(position);
 
-        String id_trip              = currentItem.getMid_trip();
-        String id_trip_hotel        = currentItem.getMid_trip_hotel1();
-        String id_trip_la_paket     = currentItem.getMid_trip_la_paket();
+        String id_trip_jamaah              = currentItem.getMid_trip_jamaah();
+        String id_trip        = currentItem.getMid_trip();
+        String id_trip_paket_perjalanan     = currentItem.getMid_paket_perjalanan();
+        String id_manasik                   = currentItem.getMid_manasik();
+        String id_trip_visa                 = currentItem.getMid_trip_visa();
+        String id_kk                        = currentItem.getMid_kk();
+        String relasi                       = currentItem.getMrelasi();
+        String harga_jual                   = currentItem.getMharga_jual();
+        String no_paspor                    = currentItem.getMno_paspor();
+        String tgl_paspor                   = currentItem.getMtgl_paspor();
+        String paspor_isue                  = currentItem.getMpaspor_isue();
+        String paspor_expire_date           = currentItem.getMpaspor_expire_date();
+        String paspor                       = currentItem.getMpaspor();
+        String surat_nikah                  = currentItem.getMsurat_nikah();
+        String kartu_keluarga               = currentItem.getMkartu_keluarga();
+        String buku_kuning                  = currentItem.getMbuku_kuning();
+        String surat_mahrom                 = currentItem.getMsurat_mahrom();
+        String foto                         = currentItem.getMfoto();
+        String bukti_tiket                  = currentItem.getMbukti_tiket();
+        String tanggal_pengajuan            = currentItem.getMtanggal_pengajuan();
+        String tanggal_mova                 = currentItem.getMtanggal_mova();
+        String tanggal_tempel_sticker       = currentItem.getMtanggal_tempel_sticker();
+        String nama_muasasah                = currentItem.getMnama_muasasah();
+        String id_vendor_visa               = currentItem.getMid_vendor_visa();
+        String hotel_bintang_madinah        =currentItem.getMhotel_bintang_madinah();
+        String id_hotel_madinah             =currentItem.getMid_hotel_madinah();
+        String okupansi_madinah             =currentItem.getMokupansi_madinah();
+        String katering_madinah             =currentItem.getMkatering_madinah();
+        String hotel_bintang_makkah         =currentItem.getMhotel_bintang_makkah();
+        String id_hotel_makkah              =currentItem.getMid_hotel_makkah();
+        String okupansi_makkah              =currentItem.getMokupansi_makkah();
+        String katering_makkah              =currentItem.getMkatering_makkah();
+        String hotel_bintang_jeddah         =currentItem.getMhotel_bintang_jeddah();
+        String id_hotel_jeddah              =currentItem.getMid_hotel_jeddah();
+        String okupansi_jeddah              =currentItem.getMokupansi_jeddah();
+        String katering_jeddah              =currentItem.getMkatering_jeddah();
+        String route_tambahan                  =currentItem.getMroute_tambahan();
+        String nama_jamaah                  =currentItem.getMnama_jamaah();
+        String tanggal_manasik              =currentItem.getMtanggal_manasik();
 
-        String id_vendor            = currentItem.getMid_vendor();
-        String tanggal_booking      = currentItem.getMtanggal_booking();
-        String tanggal_checkin      = currentItem.getMtanggal_checkin();
-        String length_of_stay       = currentItem.getMlength_of_stay();
-        String tanggal_checkout     = currentItem.getMtanggal_checkout();
-        String jenis_kamar          = currentItem.getMjenis_kamar();
-        String opsi_kamar           = currentItem.getMopsi_kamar();
-        String harga_sewa           = currentItem.getMharga_sewa();
-        String jumlah_room          = currentItem.getMjumlah_room();
-        String view                 = currentItem.getMview();
-        String profit_margin        = currentItem.getMprofit_margin();
-        String rekening             = currentItem.getMrekening();
-        String harga_jual           = currentItem.getMharga_jual();
-        String booking_fee          = currentItem.getMbooking_fee();
-        String booking_fee_currency = currentItem.getMbooking_fee_currency();
-        String contact_mobile       = currentItem.getMcontact_mobile();
-        String review               = currentItem.getMreview();
-        String status               = currentItem.getMstatus();
-        String nama_hotel           = currentItem.getMnama_hotel();
-        String bintang              = currentItem.getMbintang();
-        String nama_vendor          = currentItem.getMnama_vendor();
-
-        holder.mTextViewNamaHotel.setText(nama_hotel);
+        holder.mTextViewNamaJamaah.setText(nama_jamaah);
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                TripHotel obj = new TripHotel(model.get(position).getMid_trip_hotel1(),
+                TripJamaah obj = new TripJamaah(model.get(position).getMid_trip_jamaah(),
                         model.get(position).getMid_trip(),
-                        model.get(position).getMid_trip_la_paket(),
-                        model.get(position).getMid_hotel(),
-                        model.get(position).getMid_vendor(),
-                        model.get(position).getMtanggal_booking(),
-                        model.get(position).getMtanggal_checkin(),
-                        model.get(position).getMlength_of_stay(),
-                        model.get(position).getMtanggal_checkout(),
-                        model.get(position).getMjenis_kamar(),
-                        model.get(position).getMopsi_kamar(),
-                        model.get(position).getMharga_sewa(),
-                        model.get(position).getMjumlah_room(),
-                        model.get(position).getMview(),
-                        model.get(position).getMprofit_margin(),
-                        //id bank?
-                        model.get(position).getMrekening(),
+                        model.get(position).getMid_paket_perjalanan(),
+                        model.get(position).getMid_jamaah(),
+                        model.get(position).getMid_manasik(),
+                        model.get(position).getMid_trip_visa(),
+                        model.get(position).getMid_kk(),
+                        model.get(position).getMrelasi(),
                         model.get(position).getMharga_jual(),
-                        model.get(position).getMbooking_fee(),
-                        model.get(position).getMbooking_fee_currency(),
-                        model.get(position).getMcontact_mobile(),
-                        model.get(position).getMreview(),
-                        model.get(position).getMstatus(),
-                        model.get(position).getMnama_hotel(),
-                        model.get(position).getMbintang(),
-                        model.get(position).getMnama_vendor(),
-                        model.get(position).getMcontact_email()
+                        model.get(position).getMno_paspor(),
+                        model.get(position).getMtgl_paspor(),
+                        model.get(position).getMpaspor_isue(),
+                        model.get(position).getMpaspor_expire_date(),
+                        model.get(position).getMpaspor(),
+                        model.get(position).getMsurat_nikah(),
+                        model.get(position).getMkartu_keluarga(),
+                        //id bank?
+                        model.get(position).getMbuku_kuning(),
+                        model.get(position).getMsurat_mahrom(),
+                        model.get(position).getMfoto(),
+                        model.get(position).getMbukti_tiket(),
+                        model.get(position).getMtanggal_pengajuan(),
+                        model.get(position).getMtanggal_mova(),
+                        model.get(position).getMtanggal_tempel_sticker(),
+                        model.get(position).getMnama_muasasah(),
+                        model.get(position).getMid_vendor_visa(),
+                        model.get(position).getMhotel_bintang_madinah(),
+                        model.get(position).getMid_hotel_madinah(),
+                        model.get(position).getMokupansi_madinah(),
+                        model.get(position).getMkatering_madinah(),
+                        model.get(position).getMhotel_bintang_makkah(),
+                        model.get(position).getMid_hotel_makkah(),
+                        model.get(position).getMokupansi_makkah(),
+                        model.get(position).getMkatering_makkah(),
+                        model.get(position).getMhotel_bintang_jeddah(),
+                        model.get(position).getMid_hotel_jeddah(),
+                        model.get(position).getMokupansi_jeddah(),
+                        model.get(position).getMkatering_jeddah(),
+                        model.get(position).getMroute_tambahan(),
+                        model.get(position).getMnama_jamaah(),
+                        model.get(position).getMtanggal_manasik()
                 );
-                TripHotelFragmentDetail frgment = new TripHotelFragmentDetail();
+                TripHotelFragmentDetail frgment =   new TripHotelFragmentDetail();
                 Bundle args = new Bundle();
-                args.putParcelable("trip_hotel",obj);
+                args.putParcelable("trip_jamaah",obj);
                 frgment.setArguments(args);
 
                 fms.beginTransaction().replace(R.id.content_frames, frgment).commit();
@@ -115,15 +145,14 @@ public class TripJamaahAdapter extends RecyclerView.Adapter<TripJamaahAdapter.Vi
 
     public static class Viewholder extends RecyclerView.ViewHolder {
 
-        public TextView mTextViewNamaHotel;
+        public TextView mTextViewNamaJamaah;
         public View mView;
         private ImageView imageViewPoster;
 
         public Viewholder(View itemView) {
             super(itemView);
             mView = itemView;
-            mTextViewNamaHotel = itemView.findViewById(R.id.nama_hotel_item);
-
+            mTextViewNamaJamaah = itemView.findViewById(R.id.nama_jamaah);
         }
 
 //        public void setPosterPath(String posterPath) {

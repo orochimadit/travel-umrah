@@ -78,6 +78,9 @@ public class NavActivity extends AppCompatActivity
         if (id == R.id.nav_camera) {
             // Handle the camera action
             fms.beginTransaction().replace(R.id.content_frames, new BusFragment()).commit();
+//            getActionBar().setTitle("Data Bus");
+//            ((ParentActivity) getActivity()).setTitle("FragmentTitle");
+
         } else if (id == R.id.nav_gallery) {
             fms.beginTransaction().replace(R.id.content_frames,new TripAirlineFragment()).commit();
 
@@ -85,9 +88,10 @@ public class NavActivity extends AppCompatActivity
             fms.beginTransaction().replace(R.id.content_frames,new TripNoteFragment()).commit();
 
         } else if (id == R.id.nav_manage) {
+
             fms.beginTransaction().replace(R.id.content_frames,new TripHotelFragment()).commit();
         } else if (id == R.id.nav_share) {
-            fms.beginTransaction().replace(R.id.content_frames,new CameraFragment()).commit();
+            fms.beginTransaction().replace(R.id.content_frames,new TripJamaahFragment()).commit();
         } else if (id == R.id.nav_send) {
             fms.beginTransaction().replace(R.id.content_frames,new TripGaleriFragment()).commit();
         }

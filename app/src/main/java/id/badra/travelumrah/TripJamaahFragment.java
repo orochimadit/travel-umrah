@@ -43,11 +43,11 @@ public class TripJamaahFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         Intent intent = getActivity().getIntent();
         final String idTrip = intent.getStringExtra(ExtraIdTrip);
-        View view = inflater.inflate(R.layout.trip_airline_fragment, container, false);
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.RecycleListViewAirline);
+        View view = inflater.inflate(R.layout.trip_jamaah_fragment, container, false);
+        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.RecycleListViewJamaah);
 
         arrayList = new ArrayList<>();
-        //sendRequest(idTrip);
+        sendRequest(idTrip);
 
         FragmentManager fms = getFragmentManager();
 

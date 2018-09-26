@@ -16,6 +16,7 @@ import id.badra.model.TripHotel;
 import id.badra.model.TripJamaah;
 import id.badra.travelumrah.R;
 import id.badra.travelumrah.TripHotelFragmentDetail;
+import id.badra.travelumrah.TripJamaahFragmentDetail;
 
 public class TripJamaahAdapter extends RecyclerView.Adapter<TripJamaahAdapter.Viewholder>{
     private ArrayList<TripJamaah> model;
@@ -127,7 +128,7 @@ public class TripJamaahAdapter extends RecyclerView.Adapter<TripJamaahAdapter.Vi
                         model.get(position).getMnama_jamaah(),
                         model.get(position).getMtanggal_manasik()
                 );
-                TripHotelFragmentDetail frgment =   new TripHotelFragmentDetail();
+                TripJamaahFragmentDetail frgment =   new TripJamaahFragmentDetail();
                 Bundle args = new Bundle();
                 args.putParcelable("trip_jamaah",obj);
                 frgment.setArguments(args);

@@ -45,7 +45,7 @@ public class TripNoteAdapter extends RecyclerView.Adapter<TripNoteAdapter.Viewho
         String tanggal      = currentItem.getMtanggal();
         String deskripsi    = currentItem.getMdeskripsi();
 
-        holder.mTextViewIdTripNote.setText(id_trip_note);
+        holder.mTextViewIdTripNote.setText("Note - "+id_trip_note);
 //        holder.mTextViewIdTrip.setText(id_trip);
 //        holder.mTextViewTanggal.setText(tanggal);
 //        holder.mTextViewDeskripsi.setText(deskripsi);

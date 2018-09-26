@@ -52,7 +52,7 @@ public class TripAirlineAdapter extends RecyclerView.Adapter<TripAirlineAdapter.
         String jumlah_seat_quota=currentItem.getMjumlah_seat_quota();
         String booking_status= currentItem.getMbooking_status();
         String harga = currentItem.getMharga();
-        holder.mTextViewIdTripAirline.setText(id_trip_airline);
+        holder.mTextViewIdTripAirline.setText("Airline - "+id_trip_airline);
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override

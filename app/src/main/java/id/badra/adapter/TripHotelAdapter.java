@@ -67,7 +67,7 @@ public class TripHotelAdapter extends RecyclerView.Adapter<TripHotelAdapter.View
         String bintang              = currentItem.getMbintang();
         String nama_vendor          = currentItem.getMnama_vendor();
 
-        holder.mTextViewNamaHotel.setText(nama_hotel);
+        holder.mTextViewNamaHotel.setText("Hotel - "+nama_hotel);
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

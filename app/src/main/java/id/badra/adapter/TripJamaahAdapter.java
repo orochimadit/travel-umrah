@@ -81,7 +81,7 @@ public class TripJamaahAdapter extends RecyclerView.Adapter<TripJamaahAdapter.Vi
         String nama_jamaah                  =currentItem.getMnama_jamaah();
         String tanggal_manasik              =currentItem.getMtanggal_manasik();
 
-        holder.mTextViewNamaJamaah.setText(nama_jamaah);
+        holder.mTextViewNamaJamaah.setText("Jamaah - "+nama_jamaah);
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

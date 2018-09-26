@@ -44,7 +44,7 @@ public class TripGaleriAdapter extends RecyclerView.Adapter<TripGaleriAdapter.Vi
         String caption      = currentItem.getMcaption();
         String foto    = currentItem.getMfoto();
 
-        holder.mTextViewIdTripGaleri.setText(id_trip_galeri);
+        holder.mTextViewIdTripGaleri.setText("Galeri - "+id_trip_galeri);
 //        holder.mTextViewIdTrip.setText(id_trip);
 //        holder.mTextViewTanggal.setText(tanggal);
 //        holder.mTextViewDeskripsi.setText(deskripsi);

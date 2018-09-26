@@ -83,10 +83,8 @@ public class NavActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_gallery) {
             fms.beginTransaction().replace(R.id.content_frames,new TripAirlineFragment()).commit();
-
         } else if (id == R.id.nav_slideshow) {
             fms.beginTransaction().replace(R.id.content_frames,new TripNoteFragment()).commit();
-
         } else if (id == R.id.nav_manage) {
 
             fms.beginTransaction().replace(R.id.content_frames,new TripHotelFragment()).commit();

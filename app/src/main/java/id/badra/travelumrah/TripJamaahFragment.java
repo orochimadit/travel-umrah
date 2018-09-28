@@ -57,7 +57,7 @@ public class TripJamaahFragment extends Fragment {
 
         recyclerView.setHasFixedSize(true);
 
-        recyclerView.setLayoutManager(new GridLayoutManager(getActivity().getApplicationContext(), 2, GridLayoutManager.VERTICAL, false));
+        recyclerView.setLayoutManager(new GridLayoutManager(getActivity().getApplicationContext(), 1, GridLayoutManager.VERTICAL, false));
 
         return view;
     }

@@ -32,8 +32,8 @@ public class TripNoteAdapter extends RecyclerView.Adapter<TripNoteAdapter.Viewho
     @Override
     public Viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.trip_note_item, parent, false);
-        view.setLayoutParams(new RecyclerView.LayoutParams(RecyclerView.LayoutParams.MATCH_PARENT, RecyclerView.LayoutParams.WRAP_CONTENT));
-        return new TripNoteAdapter.Viewholder(view);
+        //view.setLayoutParams(new RecyclerView.LayoutParams(RecyclerView.LayoutParams.MATCH_PARENT, RecyclerView.LayoutParams.WRAP_CONTENT));
+        return new Viewholder(view);
     }
 
     @Override
@@ -45,7 +45,7 @@ public class TripNoteAdapter extends RecyclerView.Adapter<TripNoteAdapter.Viewho
         String tanggal      = currentItem.getMtanggal();
         String deskripsi    = currentItem.getMdeskripsi();
 
-        holder.mTextViewIdTripNote.setText("Note - "+id_trip_note);
+        holder.mTextViewIdTripNote.setText("Note - "+   id_trip_note);
 //        holder.mTextViewIdTrip.setText(id_trip);
 //        holder.mTextViewTanggal.setText(tanggal);
 //        holder.mTextViewDeskripsi.setText(deskripsi);

@@ -9,6 +9,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,14 +41,22 @@ public class TripNoteFragment extends Fragment {
     private RequestQueue requestQueue;
     private ArrayList<TripNote> arrayList;
     private TripNoteAdapter mTripNoteAdapter;
+    RecyclerView.LayoutManager mLayoutManager;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         Intent intent =getActivity().getIntent();
         final String idTrip = intent.getStringExtra(ExtraIdTrip);
+
+
+        //View view = LayoutInflater.from(getParentFragment().getContext()).inflate(R.layout.tr);
         View view = inflater.inflate(R.layout.trip_note_fragment,container,false);
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.RecycleListViewNote);
-
+        //view.setLayoutParams(new RecyclerView.LayoutParams(RecyclerView.LayoutParams.MATCH_PARENT, RecyclerView.LayoutParams.WRAP_CONTENT));
+//        mLayoutManager = new LinearLayoutManager(getActivity());
+//        recyclerView.setLayoutManager(mLayoutManager);
+        //recyclerView.setLayoutManager(new GridLayoutManager(getActivity().getApplicationContext(), 2, GridLayoutManager.VERTICAL,false));
+        //recyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getBaseContext()));
 
         FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -72,8 +81,15 @@ public class TripNoteFragment extends Fragment {
         recyclerView.setAdapter(mTripNoteAdapter);
 
         recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new GridLayoutManager(getActivity().getApplicationContext(), 1, GridLayoutManager.VERTICAL,false));
 
-        recyclerView.setLayoutManager(new GridLayoutManager(getActivity().getApplicationContext(), 2, GridLayoutManager.VERTICAL,false));
+
+
+
+
+
+
+
 
         return view;
     }

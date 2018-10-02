@@ -197,18 +197,18 @@ public class TripNoteAddFragment extends Fragment {
         AlertDialog.Builder pictureDialog = new AlertDialog.Builder(getActivity());
         pictureDialog.setTitle("Select Action");
         String[] pictureDialogItems = {
-                "Pilih photo dari galeri",
-                "Ambil photo dengan kamera"};
+                "Kamera"};
         pictureDialog.setItems(pictureDialogItems,
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         switch (which) {
                             case 0:
-                                choosePhotoFromGallary();
+                  //              choosePhotoFromGallary();
+                                takePhotoFromCamera();
                                 break;
                             case 1:
-                                takePhotoFromCamera();
+                               // takePhotoFromCamera();
                                 break;
                         }
                     }

@@ -43,8 +43,8 @@ public class TripNoteFragmentDetail extends Fragment {
             idTripNote.setText(panggil.getMid_trip_note());
             tanggal.setText(panggil.getMtanggal());
             deskripsi.setText(panggil.getMdeskripsi());
-
-            Picasso.with(getActivity().getApplicationContext()).load(Server.ImgSrcApiNote+panggil.getMtanggal()+".png")
+            //Server.ImgSrcApi+panggil.getMfoto().replace(" ","%20")
+            Picasso.with(getActivity().getApplicationContext()).load(Server.ImgSrcApiNote+panggil.getMtanggal().replace(" ","%20")+".png")
                     .placeholder(R.mipmap.ic_launcher).into(imgSNote);
         }
         return rootView;

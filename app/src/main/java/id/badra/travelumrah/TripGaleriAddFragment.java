@@ -197,7 +197,7 @@ public class TripGaleriAddFragment extends Fragment {
         AlertDialog.Builder pictureDialog = new AlertDialog.Builder(getActivity());
         pictureDialog.setTitle("Select Action");
         String[] pictureDialogItems = {
-                
+                "Ambil photo dengan Galeri",
                 "Ambil photo dengan kamera"};
         pictureDialog.setItems(pictureDialogItems,
                 new DialogInterface.OnClickListener() {
@@ -205,11 +205,11 @@ public class TripGaleriAddFragment extends Fragment {
                     public void onClick(DialogInterface dialog, int which) {
                         switch (which) {
                             case 0:
-                            //    choosePhotoFromGallary();
-                                takePhotoFromCamera();
+                               choosePhotoFromGallary();
+                          //      takePhotoFromCamera();
                                 break;
                             case 1:
-                          //      takePhotoFromCamera();
+                                takePhotoFromCamera();
                                 break;
                         }
                     }

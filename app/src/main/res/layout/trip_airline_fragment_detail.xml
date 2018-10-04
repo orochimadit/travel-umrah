@@ -1,38 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    >
 
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="15dp"
+    android:paddingTop="10dp"
+    >
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-
+    android:paddingBottom="5dp"
     >
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Id Trip Airline"
         android:textStyle="bold"
+        android:textSize="15dp"
+
         />
     <TextView
         android:id="@+id/id_trip_airline_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TITLE"/>
+        android:text="TITLE"
+
+        />
 </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:paddingBottom="5dp"
         >
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:text="Id Airline Booking"></TextView>
+            android:text="Id Airline Booking"
+
+            android:textSize="15dp"
+            ></TextView>
 
     <TextView
 
@@ -46,12 +60,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:paddingBottom="5dp"
         >
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Id trip"
             android:textStyle="bold"
+            android:textSize="15dp"
             />
     <TextView
         android:id="@+id/id_trip_detail_airline"
@@ -64,12 +80,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:paddingBottom="5dp"
         >
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Jumlah Trip Airline"
             android:textStyle="bold"
+            android:textSize="15dp"
             />
     <TextView
         android:id="@+id/jumlah_trip_airline_detail"
@@ -82,12 +100,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:paddingBottom="5dp"
         >
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Harga Jual Trip"
             android:textStyle="bold"
+            android:textSize="15dp"
             />
     <TextView
         android:id="@+id/harga_jual_trip_airline_detail"
@@ -100,12 +120,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:paddingBottom="5dp"
         >
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Flight id Dep"
             android:textStyle="bold"
+            android:textSize="15dp"
             />
     <TextView
         android:id="@+id/flight_id_dep_trip_airline_detail"
@@ -118,12 +140,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:paddingBottom="5dp"
         >
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Flight id Ret"
             android:textStyle="bold"
+            android:textSize="15dp"
             />
     <TextView
         android:id="@+id/flight_id_ret_trip_airline_detail"
@@ -136,12 +160,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:paddingBottom="5dp"
         >
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Tanggal Departure "
             android:textStyle="bold"
+            android:textSize="15dp"
             />
     <TextView
         android:id="@+id/tanggal_departure_trip_airline_detail"
@@ -154,12 +180,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:paddingBottom="5dp"
         >
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Jumlah Seat Quota "
             android:textStyle="bold"
+            android:textSize="15dp"
             />
     <TextView
         android:id="@+id/jumlah_seat_quota_trip_airline_detail"
@@ -172,12 +200,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:paddingBottom="5dp"
         >
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Booking status  "
             android:textStyle="bold"
+            android:textSize="15dp"
             />
     <TextView
         android:id="@+id/booking_status_trip_airline_detail"
@@ -190,12 +220,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:paddingBottom="5dp"
         >
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Harga Trip Airline  "
             android:textStyle="bold"
+            android:textSize="15dp"
             />
     <TextView
         android:id="@+id/harga_trip_airline_detail"
@@ -205,3 +237,4 @@
         />
     </LinearLayout>
 </LinearLayout>
+</ScrollView>

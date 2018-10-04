@@ -50,7 +50,7 @@ public class TripBusAdapterNew  extends RecyclerView.Adapter<TripBusAdapterNew.V
 //        holder.mTextViewSapMobile.setText(sapMobile);
         holder.mTextViewNamaVendor.setText("Bus - "+namaVendor);
 
-        holder.mView.setBackgroundColor(Color.parseColor("#90a4ae"));
+        //holder.mView.setBackgroundColor(Color.parseColor("#90a4ae"));
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
